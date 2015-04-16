@@ -75,9 +75,9 @@
 
                    :cljsbuild {:builds {:app {:source-paths ["env/dev/cljs"]
                                               :compiler {:main "browser-rotation.dev"
-                                                         :source-map true}}
-}
-}}
+                                                         :source-map true}}}}} 
+
+             :ring {:handler browser-rotation.handler/app}
 
              :uberjar {:hooks [leiningen.cljsbuild minify-assets.plugin/hooks]
                        :env {:production true}
