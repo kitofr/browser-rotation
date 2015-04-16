@@ -36,44 +36,38 @@
       ^{:key (k link)}
       [:img {:id i :src (value link) :width 100 :height 100 }]])])
 
-(defn add-user [users text]
-  (swap! users conj text))
+(defonce users (atom []))
 
-(defn atom-input [users]
+(defn add-user [text]
+  (let [updated (conj @users text)]
+    (reset! users updated)))
+
+(defn atom-input []
    [:input {:type "text" 
             :placeholder "Developer name"
             :on-key-down #(case (.-which %)
-                           13 (add-user users (-> % .-target .-value))) }])
+                           13 (add-user (-> % .-target .-value))
+                           nil) }])
 
-(defn browser-rotation [users]
+(defn browser-rotation []
   (let [days ["Monday" "Tuesday" "Wednesday" "Thursday" "Friday"]]
-       [users (atom ["Kristoffer" 
-                     "Lennart"
-                     "Dennis"
-                     "Victoria"
-                     "Martin"
-                     "Mikael"
-                     "Kalle"])]
-    [:div
-    [atom-input @users]
-    [:table
-     [:tr 
-      [:th]
-      (for [day days]
-        ^{:key day} [:th day])
+    [:span
+     [:div 
+      [atom-input]]
+     [:div
+      [:table
+       [:tr 
+        [:th]
+        (for [day days]
+          ^{:key day} [:th day])]
+
         (map-indexed 
           (fn [i user]
-            [browser-cycle user i]) users)]]]))
+            [browser-cycle user i]) @users)]]]))
       
 (defn home-page []
-  [:div [:h2 "Welcome to browser-rotation"]
-   [:div [:a {:href "#/about"} "go to about page"]]
-   [:h3 "Browser schedule"]
+  [:div [:h2 "Create your own browser rotation schedule"]
    [:div [browser-rotation]]])
-
-(defn about-page []
-  [:div [:h2 "About browser-rotation"]
-   [:div [:a {:href "#/"} "go to the home page"]]])
 
 (defn current-page []
   [:div [(session/get :current-page)]])
@@ -84,9 +78,6 @@
 
 (secretary/defroute "/" []
   (session/put! :current-page #'home-page))
-
-(secretary/defroute "/about" []
-  (session/put! :current-page #'about-page))
 
 ;; -------------------------
 ;; History
