@@ -46,7 +46,10 @@
    [:input {:type "text" 
             :placeholder "Developer name"
             :on-key-down #(case (.-which %)
-                           13 (add-user (-> % .-target .-value))
+                           13 (do
+                                (add-user (-> % .-target .-value))
+                                (set! (-> % .-target .-value) "")
+                                )
                            nil) }])
 
 (defn browser-rotation []
