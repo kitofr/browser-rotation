@@ -9,19 +9,30 @@ body {
   line-height: 1.5em;
 }
 
-h1, h2, h3 {
-  color: #000;
-}
-h1 {
-  font-size: 2.5em
+
+.small-heading {
+  font-family: Gill Sans, Verdana;
+  font-size: 11px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
-h2 {
-  font-size: 2em
+.large-heading {
+  font-family: times, Times New Roman, times-roman, georgia, serif;
+  color: #aac;
+  margin: 0;
+  padding: 0px 0px 6px 0px;
+  font-size: 51px;
+  line-height: 44px;
+  letter-spacing: -2px;
+  font-weight: bold;
 }
 
-h3 {
-  font-size: 1.5em
+.space {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 a {
@@ -31,4 +42,63 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+input { 
+  padding: 9px; 
+  border: solid 1px #E5E5E5; 
+  outline: 0; 
+  font: normal 13px/100% Verdana, Tahoma, sans-serif; 
+  width: 200px; 
+  background: #FFFFFF url('bg_form.png') left top repeat-x; 
+  background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF)); 
+  background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px); 
+  box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+} 
+
+input:hover, input:focus { 
+  border-color: #C9C9C9; 
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px; 
+} 
+
+table { 
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  border-collapse: collapse; 
+  border-spacing: 0; 
+}
+
+td, th { 
+  height: 30px; 
+  padding: 10px;
+}
+
+th {
+  font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #DFDFDF;
+}
+
+th:first-child {
+  border-radius: 6px 0 0 0;
+}
+
+th:last-child {
+  border-radius: 0 6px 0 0;
+}
+
+th:only-child {
+  border-radius: 6px 6px 0 0;
+}
+
+td {
+  font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 16px;
+  text-shadow: 1px 1px #ccc;
+    
 }

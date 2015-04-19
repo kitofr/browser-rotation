@@ -55,9 +55,9 @@
 (defn browser-rotation []
   (let [days ["Monday" "Tuesday" "Wednesday" "Thursday" "Friday"]]
     [:span
-     [:div 
+     [:div.space
       [atom-input]]
-     [:div
+     [:div.space
       [:table
        [:tr 
         [:th]
@@ -69,7 +69,9 @@
             [browser-cycle user i]) @users)]]]))
       
 (defn home-page []
-  [:div [:h2 "Create your own browser rotation schedule"]
+  [:div
+   [:p.small-heading "Create your own browser"]
+   [:p.large-heading "Rotation Schedule"]
    [:div [browser-rotation]]])
 
 (defn current-page []
