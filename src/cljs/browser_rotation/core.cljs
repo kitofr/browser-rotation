@@ -63,16 +63,21 @@
         [:th]
         (for [day days]
           ^{:key day} [:th day])]
-
         (map-indexed 
           (fn [i user]
             [browser-cycle user i]) @users)]]]))
       
+(defn footer "the footer part" []
+  [:ul
+   [:li "Build with " [:a {:src "https://reagent-project.github.io/"} "reagent"]]
+   [:li " by " [:a { :src "https://www.about.me/kitofr" } "kitofr"] " in 2015"]])
+
 (defn home-page []
   [:div
    [:p.small-heading "Create your own browser"]
    [:p.large-heading "Rotation Schedule"]
-   [:div [browser-rotation]]])
+   [:div [browser-rotation]]
+   [:div.footer [footer]]])
 
 (defn current-page []
   [:div [(session/get :current-page)]])

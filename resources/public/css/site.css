@@ -100,5 +100,12 @@ td {
   text-align: center;
   font-size: 16px;
   text-shadow: 1px 1px #ccc;
-    
+}
+
+ul {
+  type: none;
+}
+
+li {
+  display: inline;
 }
