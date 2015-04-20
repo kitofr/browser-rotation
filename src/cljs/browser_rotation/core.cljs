@@ -67,7 +67,7 @@
           (fn [i user]
             [browser-cycle user i]) @users)]]]))
       
-(defn footer "the footer part" []
+(defn footer []
   [:ul
    [:li "Build with " [:a {:src "https://reagent-project.github.io/"} "reagent"]]
    [:li " by " [:a { :src "https://www.about.me/kitofr" } "kitofr"] " in 2015"]])
