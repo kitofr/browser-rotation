@@ -69,8 +69,8 @@
       
 (defn footer []
   [:ul
-   [:li "Build with " [:a {:src "https://reagent-project.github.io/"} "reagent"]]
-   [:li " by " [:a { :src "https://www.about.me/kitofr" } "kitofr"] " in 2015"]])
+   [:li "Build with " [:a {:href "https://reagent-project.github.io/"} "reagent"]]
+   [:li " by " [:a { :href "https://www.about.me/kitofr" } "kitofr"] " in 2015"]])
 
 (defn home-page []
   [:div
