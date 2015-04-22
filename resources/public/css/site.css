@@ -9,7 +9,6 @@ body {
   line-height: 1.5em;
 }
 
-
 .small-heading {
   font-family: Gill Sans, Verdana;
   font-size: 11px;
@@ -108,4 +107,22 @@ ul {
 
 li {
   display: inline;
+}
+
+input[type=checkbox] {
+  display:none;
+}
+ 
+input[type=checkbox] + label
+{
+  display:inline-block;
+  padding: 0 0 0 0px;
+  opacity: 0.5;
+}
+
+input[type=checkbox]:checked + label
+{
+  display:inline-block;
+  padding: 0 0 0 0px;
+  opacity: 1;
 }
