@@ -45,7 +45,7 @@
    (for [link (browser-links i)]
      [:td 
       ^{:key (k link)}
-      [:img {:id i :src (value link) :width 100 :height 100 }]])])
+      [:img {:id i :src (value link) :width 100 :height 100 :alt (k link) }]])])
 
 (defn add-user [text]
   (let [updated (conj @users text)]
