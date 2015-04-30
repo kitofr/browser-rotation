@@ -25,6 +25,7 @@
                      {:vivaldi "https://vivaldi.com/images/logo-only@2x.png" :selected? true}
                      {:netscape "http://www.ranklogos.com/wp-content/uploads/2012/04/Netscape-logo1.jpg" :selected? true}
                      {:lynx "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTy9oS7vRhRVziK-mk-cYK4MU8yhJ4w0tnJ8US471Xb9JNy7V8k_A" :selected? true}
+                     {:tor "https://www.torproject.org/images/tor-logo.jpg" :selected? true}
                      ]))
 
 (defonce users (atom []))
