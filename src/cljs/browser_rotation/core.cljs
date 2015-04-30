@@ -75,7 +75,7 @@
                               :id n
                               :on-change #(select! i) }]
                      [:label {:for n}
-                      [:img { :src (value browser) :width 30 :height 30 } ]]])) @browsers)])
+                      [:img { :src (value browser) :width 30 :height 30 :alt (k browser)} ]]])) @browsers)])
 
 (defn browser-rotation []
   (let [days ["Monday" "Tuesday" "Wednesday" "Thursday" "Friday"]]
